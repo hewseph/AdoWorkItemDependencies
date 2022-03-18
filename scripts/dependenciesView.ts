@@ -8,7 +8,7 @@ let State: string;
 let Rel: string;
 let IsBlock: boolean;
 let client: RestClient.WorkItemTrackingHttpClient4_1 = RestClient.getClient();
-export function TryChangeValue(changedFields: { [key: string]: any; }) { 
+export function TryChangeValue(changedFields: { [key: string]: any; }) {
     if (changedFields["System.State"]) {
         ListBlockedStates.forEach(checkState => {
             if (checkState == changedFields["System.State"] && IsBlock) {
@@ -37,7 +37,7 @@ function ReadData() {
                     let dependenciesDiv = $("<div/>");
                     let messageDiv2 = $("<label/>");
                     if (WorkItemRelations.length > 0) {
-                        let secondMessage = "On hold Because : ";
+                        let secondMessage = "";
                         messageDiv.text("Dependens need to be " + DependOnState);
                         let ids: number[] = [];
                         let Urls: string[] = [];
@@ -69,6 +69,9 @@ function ReadData() {
                     }
                     if (!IsBlock) {
                         messageDiv2.text("All Clear");
+                        body.append(messageDiv2);
+                    } else {
+                        // body.append(dependenciesDiv);
                     }
                     body.append(messageDiv);
                     body.append(dependenciesDiv);

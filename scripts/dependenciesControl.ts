@@ -1,7 +1,7 @@
 import { CreateView, TryChangeValue } from "./dependenciesView";
 export class Controller {
     constructor(id: number) {
-        let inputs = VSS.getConfiguration().witInputs; 
+        let inputs = VSS.getConfiguration().witInputs;
         let ListBlockedState = inputs["ListBlockedState"];
         let RelBlocekd = inputs["RelBlocekd"];
         let DependOnState = inputs["DependOnState"];

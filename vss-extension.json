@@ -1,20 +1,22 @@
 {
     "manifestVersion": 1,
-    "id": "ADO_WorkItems_Dependencies",
-    "version": "1.0.11",
-    "name": "Make Dependencies Betwines WorkItems",
+    "id": "HFK-Blocked-By-List",
+    "version": "1.0.13",
+    "name": "Blocked by List",
     "scopes": [
         "vso.work_write"
     ],
-    "description": "Give you the ability to make Dependencies that hod the continues of flow, base on Other work item.",
-    "publisher": "AviHadad",
+    "description": "Lists dependencies that are currently blocking.",
+    "publisher": "HewKeller",
     "icons": {
         "default": "img/logo.png"
     },
-    "targets": [{
-        "id": "Microsoft.VisualStudio.Services",
-        "version": "[15.0,)"
-    }],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services",
+            "version": "[15.0,)"
+        }
+    ],
     "tags": [
         "Work Item",
         "Work Item control",
@@ -34,29 +36,30 @@
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/avih75/AdoWorkItemDependencies"
+        "uri": "https://github.com/hewseph/BlockedByList"
     },
     "links": {
         "support": {
-            "uri": "https://github.com/avih75/AdoWorkItemDependencies/issues"
+            "uri": "https://github.com/hewseph/BlockedByList/issues"
         },
         "license": {
-            "uri": "https://github.com/avih75/AdoWorkItemDependencies/blob/master/LICENSE.md"
+            "uri": "https://github.com/hewseph/BlockedByList/blob/master/LICENSE.md"
         },
         "privacypolicy": {
-            "uri": "https://github.com/avih75/AdoWorkItemDependencies/blob/master/PRIVACY.md"
+            "uri": "https://github.com/hewseph/BlockedByList/blob/master/PRIVACY.md"
         },
         "learn": {
-            "uri": "https://github.com/avih75/AdoWorkItemDependencies/blob/master/README.md"
+            "uri": "https://github.com/hewseph/BlockedByList/blob/master/README.md"
         },
         "repository": {
-            "uri": "https://github.com/avih75/AdoWorkItemDependencies"
+            "uri": "https://github.com/hewseph/BlockedByList"
         },
         "issues": {
-            "uri": "https://github.com/avih75/AdoWorkItemDependencies/issues"
+            "uri": "https://github.com/hewseph/BlockedByList/issues"
         }
     },
-    "files": [{
+    "files": [
+        {
             "path": "img",
             "addressable": true
         },
@@ -72,44 +75,50 @@
     "categories": [
         "Azure Boards"
     ],
-    "contributions": [{
-        "id": "Dependencies",
-        "description": "Add an block option whene dependencies work items arnt done.",
-        "type": "ms.vss-work-web.work-item-form-control",
-        "targets": [
-            "ms.vss-work-web.work-item-form"
-        ],
-        "properties": {
-            "name": "Workitems Dependencies",
-            "uri": "dependenciesIndex.html",
-            "inputs": [{
-                "id": "ListBlockedState",
-                "name": "Blocked State List",
-                "description": "list of state need to be block (state that cant be rich seperated by ';' ).",
-                "type": "TextArea",
-                "validation": {
-                    "dataType": "String",
-                    "isRequired": true
-                }
-            }, {
-                "id": "RelBlocekd",
-                "name": "Relation To Block by",
-                "description": "The relation type to block if needed.",
-                "type": "TextArea", 
-                "validation": {
-                    "dataType": "String",
-                    "isRequired": true
-                }
-            }, {
-                "id": "DependOnState",
-                "name": "Dependent State",
-                "description": "The state that need to be block of the related workitem.",
-                "type": "TextArea", 
-                "validation": {
-                    "dataType": "String",
-                    "isRequired": true
-                }
-            }]
+    "contributions": [
+        {
+            "id": "Dependencies",
+            "description": "Lists dependencies that are currently blocking.",
+            "type": "ms.vss-work-web.work-item-form-control",
+            "targets": [
+                "ms.vss-work-web.work-item-form"
+            ],
+            "properties": {
+                "name": "Workitems Dependencies",
+                "uri": "dependenciesIndex.html",
+                "inputs": [
+                    {
+                        "id": "ListBlockedState",
+                        "name": "Blocked State List",
+                        "description": "list of state need to be block (state that cant be rich seperated by ';' ).",
+                        "type": "TextArea",
+                        "validation": {
+                            "dataType": "String",
+                            "isRequired": true
+                        }
+                    },
+                    {
+                        "id": "RelBlocekd",
+                        "name": "Relation To Block by",
+                        "description": "The relation type to block if needed.",
+                        "type": "TextArea",
+                        "validation": {
+                            "dataType": "String",
+                            "isRequired": true
+                        }
+                    },
+                    {
+                        "id": "DependOnState",
+                        "name": "Dependent State",
+                        "description": "The state that need to be block of the related workitem.",
+                        "type": "TextArea",
+                        "validation": {
+                            "dataType": "String",
+                            "isRequired": true
+                        }
+                    }
+                ]
+            }
         }
-    }]
+    ]
 }
